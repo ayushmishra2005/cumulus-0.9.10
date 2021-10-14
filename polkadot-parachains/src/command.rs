@@ -400,6 +400,7 @@ pub fn run() -> Result<()> {
 					.into())
 			}
 		}
+		Some(Subcommand::Key(cmd)) => Ok(cmd.run(&cli)?),
 		None => {
 			let runner = cli.create_runner(&cli.run.normalize())?;
 
